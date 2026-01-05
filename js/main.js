@@ -1,8 +1,9 @@
 let running, i = 0, sentence = "", style;
 function ToDBC(str) {
     let res = "";
+    str = str.replaceAll(/\\n/g, "\n");
     str = str.replaceAll(/\s\n\s+/g, "\n");
-    str = str.replaceAll(/ +/g, "\u3000");
+    str = str.replaceAll(/\s+/g, "\u3000");
     // str = str.replaceAll(/([\u4e00-\u9fff])\1/g, "$1々");
     for (let i = 0; i < str.length; i++) {
         let code = str.charCodeAt(i);
